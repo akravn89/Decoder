@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#080e12"><meta name="description" content="Maruti Auto Expo: scan Ambience or Nexa EV and listen on your phone."><title>Maruti Auto Expo · Screenwave</title><link rel="icon" type="image/svg+xml" href="/app-icon.svg"><link rel="manifest" href="/manifest.webmanifest"><link rel="stylesheet" href="/scanner.css?v=5"></head>
+<body><main><header><a href="/" aria-label="Screenwave home">screenwave<span> / listen</span></a><span class="ready-state"><b id="libraryState">Preparing…</b><small id="offlineState">First setup</small></span></header>
+<div class="heading"><span class="overline">MARUTI AUTO EXPO</span><h1>Your screen. Your sound.</h1><p>Hold your phone upright. Fit the whole video in view.</p></div>
+<section class="viewport" aria-label="Portrait camera scanner"><video id="camera" autoplay muted playsinline></video><svg id="outline" aria-hidden="true" preserveAspectRatio="none"><polygon id="screenBorder" points=""/></svg>
+<div id="idleView"><svg viewBox="0 0 80 56" width="80" height="56" aria-hidden="true"><path d="M18 2H2v16m60-16h16v16M2 38v16h16m60-16v16H62"/></svg><h2>Your screen goes here</h2><p>Ambience or Nexa EV</p></div>
+<div class="camera-label"><span id="focusState">Rear camera</span><span id="scanTime"></span></div></section>
+<div class="status"><span id="statusDot"></span><p id="status" role="status">Loading the two soundtracks and recognition data…</p></div>
+<div class="actions"><button id="scan" disabled>Preparing audio…</button><button id="stop" hidden>Stop</button></div>
+<div id="playingView" hidden><span class="overline">NOW LISTENING</span><h2 id="trackTitle"></h2><strong id="position">00:00</strong><span id="remaining">3:00 remaining</span><p id="cameraHint">Keep the display in view for automatic sync checks.</p></div>
+<div class="actions secondary"><button id="outlineScreen" hidden>Outline screen</button><button id="testSound" disabled>Test sound</button></div>
+<audio id="sampleAudio" controls preload="none" hidden aria-label="Original soundtrack sample"></audio>
+<p id="error" role="alert" hidden></p>
+<label class="camera-option"><input id="keepCamera" type="checkbox" checked> Keep checking the display</label>
+<p class="option-help">Switch off after matching to put your phone down. With the camera off, pauses and skips need a new scan.</p>
+<details><summary>Sound &amp; sync</summary><div class="settings"><label for="volume">Volume <output id="volumeValue">100%</output></label><input id="volume" type="range" min="0" max="1.5" step=".05" value="1"><label for="offset">Sync adjustment <output id="offsetValue">0 ms</output></label><input id="offset" type="range" min="-1000" max="1000" step="10" value="0"><p>Increase if the sound is late. Scan again if the display pauses or skips.</p></div></details>
+<p class="footnote">Three-minute listening session.<br>Camera images stay on your phone.</p>
+<details><summary>Expo-day setup</summary><div class="settings"><p>Open this page once before the event and wait for <strong>Offline ready</strong>. Keep both display videos stored locally and set the player to repeat without pauses or transitions. Disable battery saver on the decoder phone.</p></div></details>
+<details class="diagnostics"><summary>Recognition &amp; camera report</summary><p id="matchState">Waiting for a scan.</p><textarea id="report" readonly rows="8" aria-label="Diagnostic report"></textarea><button id="copy">Copy report</button></details>
+<footer>SCREENWAVE 5 <span>AMBIENCE + NEXA EV</span></footer></main><script src="/scanner.js?v=5" defer></script></body></html>
